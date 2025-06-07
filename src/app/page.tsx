@@ -3,8 +3,8 @@ import Banner from "./components/banner";
 import Container from "./components/container";
 import InputSearch from "./components/input";
 import { GameProps } from "@/types/gameType";
-import Image from "next/image";
-import { IoIosArrowDropright } from "react-icons/io";
+
+import GameCard from "./components/gameCard";
 
 export default async function Home() {
   async function getGames() {
@@ -32,31 +32,14 @@ export default async function Home() {
 
         <InputSearch />
 
-        <h2 className="font-bold text-lg sm:text-xl mb-4">Jogos para conhecer:</h2>
+        <h2 className="font-bold text-lg sm:text-xl mb-4">
+          Jogos para conhecer:
+        </h2>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 mb-6">
           {allGames.map((game) => (
             <Link href={`/game/${game.id}`} key={game.id}>
-              <article className="bg-gray-300 p-2 rounded-lg flex flex-col gap-4">
-                <Image
-                  src={game.image_url}
-                  alt={game.title}
-                  width={260}
-                  height={230}
-                  priority={true}
-                  quality={100}
-                  className="object-cover block w-full sm:w-76 h-56 rounded-lg hover:scale-105 transition-all duration-200 ease-in-out"
-                />
-
-                <div className="flex w-full justify-between items-center px-2 mb-2 font-bold">
-                  <h3 className="text-ellipsis overflow-hidden whitespace-nowrap truncate">
-                    {game.title}
-                  </h3>
-                  <button className="cursor-pointer">
-                    <IoIosArrowDropright size={18} />
-                  </button>
-                </div>
-              </article>
+              <GameCard data={game} />
             </Link>
           ))}
         </section>
