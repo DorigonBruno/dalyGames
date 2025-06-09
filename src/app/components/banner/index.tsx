@@ -9,7 +9,8 @@ export default async function Banner() {
   async function getGame() {
     try {
       const response = await fetch(
-        `${process.env.NEXT_API_URL}/next-api/?api=game_day`
+        `${process.env.NEXT_API_URL}/next-api/?api=game_day`,
+        { next: { revalidate: 320 } }
       );
 
       return response.json();

@@ -1,8 +1,6 @@
 import Container from "@/app/components/container";
 import InputSearch from "@/app/components/input";
-import Image from "next/image";
 import { GameProps } from "@/types/gameType";
-import { IoIosArrowDropright } from "react-icons/io";
 import GameCard from "@/app/components/gameCard";
 
 export default async function getGameSearch({

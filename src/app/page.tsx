@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Banner from "./components/banner";
 import Container from "./components/container";
 import InputSearch from "./components/input";
@@ -38,9 +37,7 @@ export default async function Home() {
 
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 mb-6">
           {allGames.map((game) => (
-            <Link href={`/game/${game.id}`} key={game.id}>
-              <GameCard data={game} />
-            </Link>
+            <GameCard data={game} key={game.id} />
           ))}
         </section>
       </Container>
