@@ -26,9 +26,9 @@ export function Header() {
           </div>
         </div>
 
-        <button>
+        <Link href={"/profile"}>
           <IoGameController size={32} color="#475569" />
-        </button>
+        </Link>
       </nav>
     </header>
   );
