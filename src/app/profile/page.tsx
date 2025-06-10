@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "../components/container";
 import { FaShareAlt } from "react-icons/fa";
+import FavoritesGames from "./components";
 
 export default function profile() {
   return (
@@ -18,7 +19,7 @@ export default function profile() {
               className="object-cover block rounded-full w-42 h-42"
             />
 
-            <h1 className="font-bold text-xl sm:text-5xl text-gray-800">
+            <h1 className="font-bold text-xl sm:text-4xl text-gray-800">
               Bruno Dev
             </h1>
           </div>
@@ -29,6 +30,20 @@ export default function profile() {
             <button className="bg-gray-700 px-3 py-2 rounded-lg cursor-pointer">
               <FaShareAlt size={30} color="#fff" />
             </button>
+          </div>
+        </div>
+
+        <div className="mt-10 sm:mt-20 mb-3 flex w-full flex-col sm:flex-row gap-3 sm:gap-2">
+          <div className="flex-1">
+            <FavoritesGames />
+          </div>
+
+          <div className="flex-1">
+            <FavoritesGames />
+          </div>
+
+          <div className="flex-1">
+            <FavoritesGames />
           </div>
         </div>
       </Container>
